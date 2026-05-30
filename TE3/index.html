@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Centro Estadual de Educação Profissional Formação e Eventos Isaías</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<img src="Assets/logo-iceia.png" alt="Logo" class="logo">
+		<div class="header-text">
+			<h1>Centro Estadual de Educação Profissional Formação e Eventos Isaías</h1>
+			<p>Encontre sua turma, sala, quadro de horários e professores.</p>
+		</div>
+	</header>
+
+	<main>
+		<section class="search">
+			<label for="courseFilter" class="small">Curso:</label>
+			<select id="courseFilter">
+				<option value="">Todos os cursos</option>
+			</select>
+			<input id="search" placeholder="Buscar turma..." />
+			<button id="newTurmaBtn" class="btn btn-primary" type="button">Nova Turma</button>
+		</section>
+
+		<section class="layout">
+			<aside class="list">
+				<h2>Turmas</h2>
+				<ul id="turmaList"></ul>
+			</aside>
+
+			<section class="details" id="details">
+				<h2>Detalhes da Turma</h2>
+				<div id="detailsContent">Selecione uma turma à esquerda ou pesquise.</div>
+			</section>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
