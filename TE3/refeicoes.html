@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Centro Estadual de Educação Profissional Formação e Eventos Isaías | Refeições</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<button class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" type="button">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<img src="Assets/logo-iceia.png" alt="Logo" class="logo">
+		<div class="header-text">
+			<h1>Centro Estadual de Educação Profissional Formação e Eventos Isaías</h1>
+			<p>Conheça as refeições oferecidas aos estudantes.</p>
+			<p class="page-label">Refeições</p>
+		</div>
+		<nav class="side-menu" id="sideMenu" aria-hidden="true">
+			<h2>Menu</h2>
+			<a href="inicio.html">Início</a>
+			<a href="index.html">Turmas</a>
+			<a href="refeicoes.html" class="active">Refeições</a>
+			<a href="contato.html">Contato</a>
+		</nav>
+		<div class="overlay" id="menuOverlay"></div>
+	</header>
+
+	<main>
+		<section class="details meal-section">
+			<h2>Refeições</h2>
+			<p>Nosso centro oferece alimentação adequada para estudantes e colaboradores. Confira os horários das refeições de segunda a sexta.</p>
+			<button id="editMealBtn" class="btn btn-primary" type="button">Editar horários</button>
+			
+			<div id="mealDisplay">
+				<table class="meal-timetable">
+					<thead>
+						<tr>
+							<th>Refeição</th>
+							<th>Segunda</th>
+							<th>Terça</th>
+							<th>Quarta</th>
+							<th>Quinta</th>
+							<th>Sexta</th>
+						</tr>
+					</thead>
+					<tbody id="mealTableBody">
+						<tr>
+							<td class="meal-name">Lanche da manhã</td>
+							<td><div class="meal-time">9:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">9:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">9:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">9:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">9:30</div><div class="meal-description"></div></td>
+						</tr>
+						<tr>
+							<td class="meal-name">Almoço</td>
+							<td><div class="meal-time">12:20</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">12:20</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">12:20</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">12:20</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">12:20</div><div class="meal-description"></div></td>
+						</tr>
+						<tr>
+							<td class="meal-name">Lanche da tarde</td>
+							<td><div class="meal-time">15:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">15:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">15:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">15:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">15:30</div><div class="meal-description"></div></td>
+						</tr>
+						<tr>
+							<td class="meal-name">Janta</td>
+							<td><div class="meal-time">18:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">18:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">18:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">18:30</div><div class="meal-description"></div></td>
+							<td><div class="meal-time">18:30</div><div class="meal-description"></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div id="mealEditForm" style="display:none">
+				<form class="meal-edit-form">
+					<div class="form-group">
+						<label>Lanche da manhã</label>
+						<div class="meal-day-grid">
+							<div class="meal-day-item">
+								<label>Segunda:</label>
+								<input type="time" class="meal-input" data-meal="0" data-day="0">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="0" data-day="0">
+							</div>
+							<div class="meal-day-item">
+								<label>Terça:</label>
+								<input type="time" class="meal-input" data-meal="0" data-day="1">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="0" data-day="1">
+							</div>
+							<div class="meal-day-item">
+								<label>Quarta:</label>
+								<input type="time" class="meal-input" data-meal="0" data-day="2">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="0" data-day="2">
+							</div>
+							<div class="meal-day-item">
+								<label>Quinta:</label>
+								<input type="time" class="meal-input" data-meal="0" data-day="3">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="0" data-day="3">
+							</div>
+							<div class="meal-day-item">
+								<label>Sexta:</label>
+								<input type="time" class="meal-input" data-meal="0" data-day="4">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="0" data-day="4">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Almoço</label>
+						<div class="meal-day-grid">
+							<div class="meal-day-item">
+								<label>Segunda:</label>
+								<input type="time" class="meal-input" data-meal="1" data-day="0">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="1" data-day="0">
+							</div>
+							<div class="meal-day-item">
+								<label>Terça:</label>
+								<input type="time" class="meal-input" data-meal="1" data-day="1">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="1" data-day="1">
+							</div>
+							<div class="meal-day-item">
+								<label>Quarta:</label>
+								<input type="time" class="meal-input" data-meal="1" data-day="2">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="1" data-day="2">
+							</div>
+							<div class="meal-day-item">
+								<label>Quinta:</label>
+								<input type="time" class="meal-input" data-meal="1" data-day="3">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="1" data-day="3">
+							</div>
+							<div class="meal-day-item">
+								<label>Sexta:</label>
+								<input type="time" class="meal-input" data-meal="1" data-day="4">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="1" data-day="4">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Lanche da tarde</label>
+						<div class="meal-day-grid">
+							<div class="meal-day-item">
+								<label>Segunda:</label>
+								<input type="time" class="meal-input" data-meal="2" data-day="0">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="2" data-day="0">
+							</div>
+							<div class="meal-day-item">
+								<label>Terça:</label>
+								<input type="time" class="meal-input" data-meal="2" data-day="1">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="2" data-day="1">
+							</div>
+							<div class="meal-day-item">
+								<label>Quarta:</label>
+								<input type="time" class="meal-input" data-meal="2" data-day="2">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="2" data-day="2">
+							</div>
+							<div class="meal-day-item">
+								<label>Quinta:</label>
+								<input type="time" class="meal-input" data-meal="2" data-day="3">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="2" data-day="3">
+							</div>
+							<div class="meal-day-item">
+								<label>Sexta:</label>
+								<input type="time" class="meal-input" data-meal="2" data-day="4">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="2" data-day="4">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Janta</label>
+						<div class="meal-day-grid">
+							<div class="meal-day-item">
+								<label>Segunda:</label>
+								<input type="time" class="meal-input" data-meal="3" data-day="0">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="3" data-day="0">
+							</div>
+							<div class="meal-day-item">
+								<label>Terça:</label>
+								<input type="time" class="meal-input" data-meal="3" data-day="1">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="3" data-day="1">
+							</div>
+							<div class="meal-day-item">
+								<label>Quarta:</label>
+								<input type="time" class="meal-input" data-meal="3" data-day="2">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="3" data-day="2">
+							</div>
+							<div class="meal-day-item">
+								<label>Quinta:</label>
+								<input type="time" class="meal-input" data-meal="3" data-day="3">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="3" data-day="3">
+							</div>
+							<div class="meal-day-item">
+								<label>Sexta:</label>
+								<input type="time" class="meal-input" data-meal="3" data-day="4">
+								<input type="text" class="meal-desc-input" placeholder="Nome/descrição" data-meal="3" data-day="4">
+							</div>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="button" id="saveMealBtn" class="btn btn-primary">Salvar</button>
+						<button type="button" id="cancelMealBtn" class="btn btn-secondary">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+	<script>
+		let mealSchedule = [
+		  [{time:'09:30',name:'',day:'Segunda'},{time:'09:30',name:'',day:'Terça'},{time:'09:30',name:'',day:'Quarta'},{time:'09:30',name:'',day:'Quinta'},{time:'09:30',name:'',day:'Sexta'}],
+		  [{time:'12:20',name:'',day:'Segunda'},{time:'12:20',name:'',day:'Terça'},{time:'12:20',name:'',day:'Quarta'},{time:'12:20',name:'',day:'Quinta'},{time:'12:20',name:'',day:'Sexta'}],
+		  [{time:'15:30',name:'',day:'Segunda'},{time:'15:30',name:'',day:'Terça'},{time:'15:30',name:'',day:'Quarta'},{time:'15:30',name:'',day:'Quinta'},{time:'15:30',name:'',day:'Sexta'}],
+		  [{time:'18:30',name:'',day:'Segunda'},{time:'18:30',name:'',day:'Terça'},{time:'18:30',name:'',day:'Quarta'},{time:'18:30',name:'',day:'Quinta'},{time:'18:30',name:'',day:'Sexta'}]
+		];
+
+		function loadMealSchedule(){
+		  const saved = window.localStorage.getItem('mealSchedule');
+		  if(saved) try{ mealSchedule = JSON.parse(saved); } catch(e){}
+		}
+
+		function saveMealSchedule(){
+		  window.localStorage.setItem('mealSchedule',JSON.stringify(mealSchedule));
+		}
+
+		function populateForm(){
+		  mealSchedule.forEach((meal,mi)=>{
+		    meal.forEach((day,di)=>{
+		      const timeInput = document.querySelector(`input[type="time"][data-meal="${mi}"][data-day="${di}"]`);
+		      const nameInput = document.querySelector(`input[type="text"][data-meal="${mi}"][data-day="${di}"]`);
+		      if(timeInput) timeInput.value = day.time;
+		      if(nameInput) nameInput.value = day.name || '';
+		    });
+		  });
+		}
+
+		function updateTable(){
+		  const tbody = document.getElementById('mealTableBody');
+		  mealSchedule.forEach((meal,mi)=>{
+		    const row = tbody.rows[mi];
+		    if(row){
+		      meal.forEach((day,di)=>{
+		        const cell = row.cells[di+1];
+		        const timeDiv = cell.querySelector('.meal-time');
+		        const descDiv = cell.querySelector('.meal-description');
+		        if(timeDiv) timeDiv.textContent = day.time;
+		        if(descDiv) descDiv.textContent = day.name || '';
+		      });
+		    }
+		  });
+		}
+
+		document.getElementById('editMealBtn')?.addEventListener('click',()=>{
+		  document.getElementById('mealDisplay').style.display='none';
+		  document.getElementById('mealEditForm').style.display='block';
+		  populateForm();
+		});
+
+		document.getElementById('saveMealBtn')?.addEventListener('click',()=>{
+		  document.querySelectorAll('.meal-input').forEach(input=>{
+		    const mi = parseInt(input.dataset.meal);
+		    const di = parseInt(input.dataset.day);
+		    if(mealSchedule[mi]&&mealSchedule[mi][di]) mealSchedule[mi][di].time = input.value;
+		  });
+		  document.querySelectorAll('.meal-desc-input').forEach(input=>{
+		    const mi = parseInt(input.dataset.meal);
+		    const di = parseInt(input.dataset.day);
+		    if(mealSchedule[mi]&&mealSchedule[mi][di]) mealSchedule[mi][di].name = input.value;
+		  });
+		  saveMealSchedule();
+		  updateTable();
+		  document.getElementById('mealDisplay').style.display='block';
+		  document.getElementById('mealEditForm').style.display='none';
+		});
+
+		document.getElementById('cancelMealBtn')?.addEventListener('click',()=>{
+		  document.getElementById('mealDisplay').style.display='block';
+		  document.getElementById('mealEditForm').style.display='none';
+		});
+
+		loadMealSchedule();
+		updateTable();
+	</script>
+
+</body>
+</html>
